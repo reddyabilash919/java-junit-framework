@@ -32,9 +32,9 @@ public class BaseUiTest {
         System.out.println("execution started");
         System.out.println("Base URL: " + baseUrl);
         System.out.println("Username: " + username);
-        driver = new ChromeDriver();
+       
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless", "--disable-gpu", "--no-sandbox","--disable-dev-shm-usage");
+        options.addArguments("--headless=new", "--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
