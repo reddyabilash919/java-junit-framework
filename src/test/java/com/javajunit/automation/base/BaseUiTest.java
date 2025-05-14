@@ -29,10 +29,12 @@ public class BaseUiTest {
          if (baseUrl == null || username == null || password == null) {
             throw new RuntimeException("Missing required environment variables");
         }
-
+        System.out.println("execution started");
+        System.out.println("Base URL: " + baseUrl);
+        System.out.println("Username: " + username);
         driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless", "--disable-gpu", "--no-sandbox");
+        options.addArguments("--headless", "--disable-gpu", "--no-sandbox","--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
