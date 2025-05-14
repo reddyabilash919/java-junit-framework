@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
@@ -30,6 +31,9 @@ public class BaseUiTest {
         }
 
         driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless", "--disable-gpu", "--no-sandbox");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
 
