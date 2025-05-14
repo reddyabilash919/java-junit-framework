@@ -1,0 +1,5 @@
+com\javajunit\automation\pages\ContactListPage.class
+com\javajunit\automation\App.class
+com\javajunit\automation\pages\BasePage.class
+com\javajunit\automation\config\Config.class
+com\javajunit\automation\pages\LoginPage.class
