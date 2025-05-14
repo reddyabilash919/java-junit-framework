@@ -22,9 +22,9 @@ public class BaseUiTest {
     public void setUp() {
         // Initialize WebDriver or other UI test setup here
         dotenv = Dotenv.load(); // Load environment variables from .env file
-        username = System.getenv("Username1"); // Get username from environment variable
-        password = System.getenv("Password1"); // Get password from environment variable
-        baseUrl = System.getenv("BaseUrl"); // Get base URL from environment variable
+        username = System.getenv("USERNAME"); // Get username from environment variable
+        password = System.getenv("PASSWORD"); // Get password from environment variable
+        baseUrl = System.getenv("LOGIN_URL"); // Get base URL from environment variable
 
          if (baseUrl == null || username == null || password == null) {
             throw new RuntimeException("Missing required environment variables");
