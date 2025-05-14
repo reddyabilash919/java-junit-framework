@@ -35,7 +35,7 @@ jobs:
           sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
 
       - name: Verify Chrome
-        run: chrome --version
+        run: /usr/bin/google-chrome --version
 
       - name: Set environment variables
         run: echo "Running with LOGIN_URL=$LOGIN_URL"
