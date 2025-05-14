@@ -21,11 +21,8 @@ jobs:
           distribution: "temurin"
 
       - name: Install Chrome
-        run: |
-          wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/136.0.7103.92/linux64/chromedriver-linux64.zip
-          unzip chromedriver-linux64.zip
-          chmod +x chromedriver-linux64/chromedriver
-          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+        run: browser-actions/setup-chrome@v1
+
       - name: Verify Chrome
         run: chrome --version
 
