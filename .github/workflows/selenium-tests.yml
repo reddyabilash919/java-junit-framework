@@ -20,8 +20,19 @@ jobs:
           java-version: "17"
           distribution: "temurin"
 
-      - name: Install Chrome
-        run: browser-actions/setup-chrome@v1
+      - name: Install Chrome 136
+        run: |
+          wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/136.0.7103.92/linux64/chrome-linux64.zip
+          unzip chrome-linux64.zip
+          sudo mv chrome-linux64 /opt/chrome136
+          sudo ln -sf /opt/chrome136/chrome /usr/bin/google-chrome
+
+      - name: Install ChromeDriver 136
+        run: |
+          wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/136.0.7103.92/linux64/chromedriver-linux64.zip
+          unzip chromedriver-linux64.zip
+          chmod +x chromedriver-linux64/chromedriver
+          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
 
       - name: Verify Chrome
         run: chrome --version
