@@ -37,6 +37,9 @@ jobs:
       - name: Verify Chrome
         run: /usr/bin/google-chrome --version
 
+      - name: Verify ChromeDriver version
+        run: /usr/local/bin/chromedriver --version
+
       - name: Set environment variables
         run: echo "Running with LOGIN_URL=$LOGIN_URL"
         env:
