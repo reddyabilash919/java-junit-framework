@@ -22,9 +22,9 @@ public class BaseUiTest {
     public void setUp() {
         // Initialize WebDriver or other UI test setup here
         dotenv = Dotenv.load(); // Load environment variables from .env file
-        username = System.getenv("USERNAME"); // Get username from environment variable
-        password = System.getenv("PASSWORD"); // Get password from environment variable
-        baseUrl = System.getenv("LOGIN_URL"); // Get base URL from environment variable
+        username = (dotenv.get("EMAIL"))!=null?dotenv.get("EMAIL"): System.getenv("EMAIL"); // Get username from environment variable
+        password = (dotenv.get("PASSWORD"))!=null?dotenv.get("PASSWORD"): System.getenv("PASSWORD"); // Get password from environment variable
+        baseUrl = (dotenv.get("LOGIN_URL"))!=null?dotenv.get("LOGIN_URL"): System.getenv("LOGIN_URL");// Get base URL from environment variable
 
          if (baseUrl == null || username == null || password == null) {
             throw new RuntimeException("Missing required environment variables");
@@ -32,9 +32,11 @@ public class BaseUiTest {
         System.out.println("execution started");
         System.out.println("Base URL: " + baseUrl);
         System.out.println("Username: " + username);
-       
+      
+       //System.getProperty("webdriver.chrome.driver")
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new", "--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage");
+      //  options.addArguments("--headless=new", "--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }

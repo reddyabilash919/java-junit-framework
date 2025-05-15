@@ -1,2 +1,3 @@
 com\javajunit\automation\base\BaseUiTest.class
+com\javajunit\automation\base\ChromeDriverLocator.class
 com\javajunit\tests\ui\LoginTest.class

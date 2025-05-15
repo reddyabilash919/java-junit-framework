@@ -49,12 +49,12 @@ jobs:
         run: mvn install
         env:
           LOGIN_URL: ${{ secrets.LOGIN_URL }}
-          USERNAME: ${{ secrets.USERNAME }}
+          USERNAME: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
 
       - name: Run Maven Tests
         run: mvn test
         env:
           LOGIN_URL: ${{ secrets.LOGIN_URL }}
-          USERNAME: ${{ secrets.USERNAME }}
+          USERNAME: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
